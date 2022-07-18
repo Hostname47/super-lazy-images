@@ -3,6 +3,10 @@ body {
     color: rgb(15, 15, 15);
 }
 
+.none {
+    display: none !important;
+}
+
 #app {
     display: flex;
     align-items: center;
@@ -24,6 +28,16 @@ body {
     color: rgb(41, 41, 41);
 }
 
+#credits {
+    margin-top: 0;
+    margin-bottom: 34px;
+    font-size: 13px;
+    color: rgb(15, 15, 15);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
 .link {
     color: rgb(0, 160, 253);
     text-decoration: none;
@@ -41,7 +55,6 @@ body {
     gap: 10px;
     
     width: 900px;
-    height: 400px;
 }
 
 .image-component {
@@ -60,6 +73,7 @@ body {
     background-color: #f7f7f7;
     overflow: hidden;
     border-bottom: 1px solid #eaeaea;
+    cursor: pointer;
 }
 
 .image-component .image {
@@ -98,4 +112,77 @@ body {
     font-weight: bold;
     color: cornflowerblue;
     text-decoration: none;
+}
+
+#fetch-box {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#fetch-box .icon {
+    width: 40px;
+    height: 40px;
+    fill: #059B7D;
+    margin-left: 4px;
+}
+
+#fetch-box .loading-circle-container {
+    position: relative;
+    width: 30px;
+    height: 6px;
+}
+
+#fetch-box  .loading-circle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #059B7D;
+}
+
+#fetch-box .text {
+    font-size: 13px;
+    color: rgb(41, 41, 41);
+}
+
+.animate-loading-circle {
+    animation: circle-balancing 1.5s linear infinite;
+    -webkit-animation: circle-balancing 1.5s linear infinite;
+}
+
+@keyframes circle-balancing {
+    0% {
+        width: 6px;
+        border-radius: 50%;
+        left: 0;
+        right: auto;
+    }
+
+    25% {
+        width: 30px;
+        border-radius: 25px;
+    }
+
+    50% {
+        right: 0;
+        left: auto;
+        width: 6px;
+        border-radius: 50%;
+    }
+
+    75% {
+        width: 30px;
+        border-radius: 25px;
+    }
+    
+    100% {
+        left: 0;
+        right: auto;
+        width: 6px;
+        border-radius: 50%;
+    }
 }
