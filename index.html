@@ -14,15 +14,15 @@
     <body>
         <div id="app">
             <h1 id="title">Lazy loading images with animation</h1>
-            <p id="sub-title">I'm using <a href="https://www.pexels.com/" class="link" target="_blank">pexels</a> API to fetch images and Intersection Observer API to implement lazy loading.</p>
             <p id="credits">
                 created with
                 <svg class="heart-beating" fill="#FF0000" style="width: 16px; stroke: #331010; stroke-width: 5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 94.5"><path d="M86.82,26.63v-7.3H78.64V12H62.27v7.29H54.09v7.3H45.91v-7.3H37.73V12H21.36v7.29H13.18v7.3H5V48.5h8.18v7.29h8.18v7.29h8.19v7.29h8.18v7.3h8.18V85h8.18V77.67h8.18v-7.3h8.18V63.08h8.19V55.79h8.18V48.5H95V26.63Z"/></svg>
-                by <a href="https://mouad-nassri.netlify.app" target="_blank" class="link">mouad nassri</a>.
+                by <a href="https://mouad-nassri.netlify.app" target="_blank" class="link">Mouad</a>
             </p>
+            <p id="sub-title">I'm using <a href="https://www.pexels.com/" class="link" target="_blank">pexels</a> API to fetch images and Intersection Observer API to implement lazy loading.</p>
 
             <!-- the following images box will be filled when we get images from api -->
-            <div id="images-box" class="">
+            <div id="images-box">
 
             </div>
 
@@ -32,18 +32,19 @@
                 <div class="loading-circle-container">
                     <div class="loading-circle animate-loading-circle"></div>
                 </div>
-                <span class="text">Fetching images from <strong>pexels</strong> api, please wait..</span>
+                <span class="text">fetching images, please wait..</span>
             </div>
 
             <!-- image component -->
             <div class="image-component image-component-skeleton none">
                 <div class="image-container">
-                    <img src="" class="image" alt="">
+                    <!-- images are lazy loaded, so the url will be inserted to data-src (look at js file) -->
+                    <img class="image lazy-image">
                 </div>
                 <div class="meta-box">
-                    <h3 class="image-title"><a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</a></h3>
+                    <h3 class="title"><a href="" target="_blank">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</a></h3>
                     <p class="meta">Photographer: <a href="" target="_blank" class="photographer-name">Mouad Nassri</a></p>
-                    <p class="meta">Dimensions: <span class="width">300px</span> <span class="x-dimension">✖</span> <span class="height">400px</span></p>
+                    <p class="meta">Dimensions: <span class="width">300</span>px <span class="x-dimension">✖</span> <span class="height">400</span>px</p>
                 </div>
             </div>
         </div>
