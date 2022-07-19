@@ -48,11 +48,11 @@ let fetchObserver = new IntersectionObserver((entries, observer) => {
                             let component = document.querySelector('.image-component-skeleton').cloneNode(true);
                             // Set image dimensions
                             if(photo.width >= photo.height) {
-                                component.querySelector('.image').style.width = '100%';
-                                component.querySelector('.image').style.height = 'auto';
-                            } else {
                                 component.querySelector('.image').style.width = 'auto';
                                 component.querySelector('.image').style.height = '100%';
+                            } else {
+                                component.querySelector('.image').style.width = '100%';
+                                component.querySelector('.image').style.height = 'auto';
                             }
                             component.querySelector('.image-container').style.backgroundColor = photo.avg_color;
                             component.querySelector('.image').dataset.src = photo.src.landscape;
@@ -89,7 +89,7 @@ let fetchObserver = new IntersectionObserver((entries, observer) => {
                     }).finally(() => {
                         fetchLock = true;
                     });
-            }, 1000);
+            }, 600);
 
         }
     });
@@ -112,7 +112,6 @@ let lazyImageObserver = new IntersectionObserver((entries) => {
     entries.forEach(function(image){
         if(image.isIntersecting) {
             let lazyImage = image.target.querySelector('.image');
-            console.log(lazyImage);
             lazyImage.src = lazyImage.dataset.src;
             // lazyImage.classList.remove("lazy-image"); // This is not neccessary right now
             lazyImageObserver.unobserve(lazyImage);
